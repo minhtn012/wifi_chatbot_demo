@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Chatbot (Node.js)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('chat')">Cửa Sổ Chat</button>
+            <button class="tab-button" onclick="showTab('data-entry')">Nhập Dữ Liệu</button>
+        </div>
+
+        <!-- Tab Cửa Sổ Chat -->
+        <div id="chat" class="tab-content active">
+             <div id="chat-container">
+                <div id="chat-window">
+                    <div class="message bot-message"><p>Xin chào! Tôi có thể giúp gì cho bạn?</p></div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-message" placeholder="Nhập câu hỏi của bạn...">
+                    <button id="send-button">Gửi</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Nhập Dữ Liệu -->
+        <div id="data-entry" class="tab-content">
+            <!-- Header Section - Full Width Row -->
+            <div class="data-header">
+                <h2>Quản Lý Nội Dung Quảng Cáo</h2>
+                <p>Thêm và quản lý nội dung để chatbot có thể trả lời chính xác hơn</p>
+            </div>
+
+            <!-- Main Content Grid - Below Header -->
+            <div class="data-container">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <h3>Nhập Nội Dung Mới</h3>
+                    <form id="content-form">
+                        <input type="text" id="title" placeholder="Nhập Title (Phân loại, VD: gọi xe)" required>
+                        <textarea id="content" placeholder="Nhập Content (Nội dung ưu tiên trả lời)" required></textarea>
+                        <button type="submit">Thêm Nội Dung</button>
+                        <p id="form-status"></p>
+                    </form>
+                </div>
+
+                <!-- Content Display Section -->
+                <div class="display-section">
+                    <h3>Nội Dung Đã Lưu</h3>
+                    <div id="content-list">
+                        <p class="loading">Đang tải...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
